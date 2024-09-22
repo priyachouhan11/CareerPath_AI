@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'counsellors', #app
-    # 'students', #app
-    # 'cource_guidance', #app
+    'courses_guidance', #app
+    'rest_framework'
+
 ]
 
 MIDDLEWARE = [
@@ -58,7 +58,9 @@ ROOT_URLCONF = 'careerPath_AI.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [
+          #BASE_DIR/'templates'
+          ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +127,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+}

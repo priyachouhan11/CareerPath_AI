@@ -14,14 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from turtle import home
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 from careerPath_AI import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',view.index,name='index'),
-    path('header',view.header,name='header'),
+    # path('',view.index,name='index'),
+    # path('header',view.header,name='header'),
+
+    path('api/', include('courses_guidance.urls')),
 ]
